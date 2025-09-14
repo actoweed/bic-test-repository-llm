@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+    volumes:
+      - ./:/app
+      - ./server_logs.txt:/app/server_logs.txt
+      - ./benchmark_results.csv:/app/benchmark_results.csv
